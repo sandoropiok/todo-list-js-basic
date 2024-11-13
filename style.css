@@ -1,0 +1,184 @@
+@import url(https://fonts.bunny.net/css?family=abril-fatface:400|abyssinica-sil:400);
+
+:root {
+  --clr: #00ccff;
+  --i: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Abyssinica SIL", serif;
+}
+
+main {
+  background: url(./assets/doge\ meme.jpg) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 6rem;
+  letter-spacing: 5px;
+  text-shadow: 1px 3px var(--clr);
+  font-family: "Abril Fatface", display;
+}
+h2 {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    text-shadow: 1px 3px var(--clr);
+    font-family: "Abril Fatface", display;
+}
+form {
+  width: 35%;
+  background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  margin: 30px;
+  flex-wrap: wrap;
+  background: #0e1538;
+}
+
+a {
+  position: relative;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+a:hover {
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 400%;
+  background: var(--clr);
+  transition: 1s;
+  animation: animate 2s linear infinite;
+  animation-delay: calc(0.33s * var(--i));
+}
+
+a:hover::before {
+  width: 120%;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  background: #0e1538;
+  inset: 4px;
+  transition: 0.5s;
+}
+a:hover::after {
+  background: var(--clr);
+}
+a span {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 3px var(--clr);
+  color: #fff;
+  opacity: 0.8;
+  letter-spacing: 4px;
+  transition: 0.5s;
+}
+a:hover span {
+  opacity: 1;
+  color: #0e1538;
+}
+input {
+  margin-left: 30px;
+  height: 60px;
+  width: 350px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px var(--clr);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+input:focus {
+  border: 2px solid var(--clr);
+  box-shadow: 0px 0px 20px var(--clr);
+}
+input::placeholder {
+  color: #c2bfbf;
+  font-style: italic;
+}
+
+section,
+.checked-section {
+  width: 35%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.todo-item {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+}
+
+.icon-check,
+.icon-delete,
+.icon-edit {
+  padding: 7px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #28a745;
+  margin-left: 15px;
+}
+
+.icon-delete {
+  color: rgb(255, 0, 25);
+}
+
+.icon-check:hover {
+  box-shadow: 0px 0px 15px var(--clr);
+}
+
+.icon-delete:hover {
+    box-shadow: 0px 0px 15px var(--clr);
+}
